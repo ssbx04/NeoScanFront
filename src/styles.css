@@ -1,12 +1,14 @@
+/* src: url('/public/Nexa/NexaLight.otf'); */
 @font-face {
   font-family: 'NexaLight';
-  src: url('/public/fonts/Nexa/NexaLight.otf') format('truetype');
+  src: url('/fonts/Nexa-ExtraLight.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'NexaBold';
-  src: url('/public/fonts/Nexa/NexaBold.otf') format('truetype');
+  src: url('/fonts/Nexa-Heavy.ttf') format('truetype');
+  /* src: url('/public/fonts/Nexa/NexaBold.otf'); */
   font-weight: normal;
   font-style: normal;
 }
@@ -15,4 +17,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'NexaLight', sans-serif;
+  letter-spacing: 1px;
+  color: #1b1b1b;
 }
