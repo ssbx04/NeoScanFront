@@ -1,0 +1,150 @@
+.main_chatbot{
+  max-height: 100vh;
+}
+.no_quest_layout{
+  max-height: 80vh;
+  width: 100%;
+  margin-top: 100px;
+}
+#unique{
+    font-size: 40px;
+}
+
+.mariama{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-weight: 700;
+}
+
+.questionfrequentes{
+  width: 100%;
+  overflow-x: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 250px;
+}
+.questions{
+  flex: 0 0 auto;
+  width: 350px;
+  height: 105px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0px 0.4px 0.4px 0.4px rgb(246, 243, 243);
+  border-radius: 16px;
+  font-weight: 700;
+  padding: 20px;
+  cursor: pointer;
+}
+.soustitre{
+    text-align: center;
+}
+input{
+  border-radius: 30px;
+  width: 75%;
+  height: 40px;
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-left: 20px;
+  padding-right: 40px;
+  outline: none;
+}
+.send_image{
+  position: fixed;
+  z-index: 1;
+  right: 13%;
+  bottom: 6%;
+  cursor: pointer;
+}
+.image{
+  width: 32px;
+  height: 32px;
+}
+.demande{
+  background-color: #F9F9F9;
+  border-radius: 30px;
+  padding: 10px 20px;
+  width: fit-content;
+  align-self: flex-end;
+}
+.discussion{
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  overflow-y: auto;
+  gap: 20px;
+}
+.reponse{
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.bot_pp{
+  width: 36px;
+}
+.disabled {
+  cursor: unset;
+  opacity: 0.5; /* Pour mieux indiquer que c'est désactivé */
+}
+
+
+/* Responsive pour petits écrans */
+@media (max-width: 768px) {
+    .mariama {
+        margin-top: 120px;
+    }
+    .mariama img{
+      width: 30px;
+    }
+    #unique{
+      font-size: 30px;
+    }
+    .soustitre{
+      font-size: 14px;
+    }
+    .send_image{
+      right: 14%;
+    }
+
+}
+@media (max-width: 600px) {
+    #unique{
+      font-size: 24px;
+    }
+    .mariama img{
+      width: 24px;
+    }
+    .questionfrequentes{
+      margin-top: 175px;
+    }
+    .reponse span,.demande{
+      font-size: 12px;
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+  input{
+    width: 85%;
+  }
+      .send_image{
+      right: 10%;
+    }
+  #unique{
+      font-size: 18px;
+    }
+    .questionfrequentes{
+      margin-top: 250px;
+    }
+    .image {
+        width: 24px;
+        height: 24px;
+    }
+}
