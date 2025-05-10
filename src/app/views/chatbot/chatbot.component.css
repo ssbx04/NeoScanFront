@@ -1,0 +1,99 @@
+#unique{
+    font-size: 40px;
+}
+
+.mariama{
+    display: flex;
+    justify-content: center;
+    margin-top: 180px;
+    font-weight: 700;
+}
+
+.questions{
+    width: 236px;
+    height: 105px;
+    box-shadow: 20px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0px 0.4px 0.4px 0.4px rgb(246, 243, 243);
+    border-radius: 16px;
+    text-decoration: none;
+    font-weight: 700;
+}
+.questionfrequentes{
+    display: flex;
+    justify-content: center;
+    margin-top: 250px;/*Normalement ca doit etre 286px */
+    justify-content: space-around;
+}
+.soustitre{
+    text-align: center;
+}
+input{
+    width: 100%;
+    border-radius: 30px;
+    height: 40px;
+    margin-top: 15px;
+}
+.image{
+    width: 32px;
+    height: 32px;
+}
+
+.demande{
+    text-align: right;
+}
+.span_demande{
+    background-color: rgb(196, 194, 194);
+    border-radius: 10px;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+.discussion{
+    margin-top: 20px;
+}
+.reponse{
+    display: flex;
+    justify-content: left;
+}
+
+
+/* Responsive pour petits écrans */
+@media (max-width: 768px) {
+    .questionfrequentes {
+        flex-direction: row;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 0 15px 15px;
+        margin-top: 150px;
+        gap: 15px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .questions {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        width: 200px;
+        height: 90px;
+    }
+
+    .mariama {
+        margin-top: 120px;
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+    .questions {
+        width: 180px;
+        height: 80px;
+        font-size: 14px;
+    }
+    
+    .image {
+        width: 24px;
+        height: 24px;
+    }
+}
