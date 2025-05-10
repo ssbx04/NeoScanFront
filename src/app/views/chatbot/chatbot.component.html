@@ -22,7 +22,7 @@
 @else {
   <div class="discussion">
     @for (message of messages; track $index) {
-      @if (message.sender === 'user') {
+      @if (message.role === 'user') {
         <div class="demande">{{ message.content }}</div>
       }
       @else {

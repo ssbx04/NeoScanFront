@@ -20,10 +20,10 @@ export class ChatbotComponent {
   display_loader: boolean = false;
   temp_response: string = '';
   received_response: string = '';
-  messages: { sender: string, content: string }[] = [];
+  messages: { role: string, content: string }[] = [];
   isTyping: boolean = false;
   envoyerMessage(contenu: string) {
-    this.messages.push({ sender: 'user', content: contenu });
+    this.messages.push({ role: 'user', content: contenu });
   }
   fillInput(message : string){
     this.formulaire.patchValue({
@@ -40,10 +40,10 @@ export class ChatbotComponent {
     this.temp_response = '';
     this.isTyping = true;
 
-    this.chatService.getResponse(userMessage).subscribe(response => {
+    this.chatService.getResponse(userMessage,this.messages).subscribe(response => {
       this.temp_response = response.response;
       this.display_loader = false;
-      this.messages.push({ sender: 'api', content: ''});
+      this.messages.push({ role: 'assistant', content: ''});
       let index = 0
       const typeF = () => {
         if (index < this.temp_response.length) {
