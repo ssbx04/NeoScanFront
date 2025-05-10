@@ -1,1 +1,24 @@
-<p>scanner works!</p>
+<div class="logo_container">
+  <img src="NamedLogo.svg" alt="">
+</div>
+<div class="scanner_main_container">
+  <h2 class="analyse">Analysez votre scanner</h2>
+  <p class="analyse_text">Importez votre image de scanner (JPG, PNG …). Notre intelligence artificielle l’analyse pour détecter d’éventuels signes de cancer.</p>
+    @if (image_selection_state) {
+      <div class="file_selected">
+        <div class="image_container">
+          <img [src]="'data:' + fileType  + ';base64,' +  base64String " alt="">
+        </div>
+        <p class="select_image_submit" (click)="predictCancer()">Analyser</p>
+      </div>
+    }
+    @else {
+      <div class="_nofile">
+        <label for="image" class="select_image">Sélectionner une image</label>
+        <input  type="file" id="image" (change)="onFileSelected($event)">
+      </div>
+    }
+
+
+
+</div>
