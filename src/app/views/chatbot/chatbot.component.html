@@ -1,1 +1,62 @@
-<p>chatbot works!</p>
+<div class="main_chatbot">
+  @if (messages.length == 0) {
+    <div class="no_quest_layout">
+      <div class="mariama">
+        <img src="/Logo.png" alt="Logo"> <span id="unique"> Bonjour, c'est NeoScan</span>
+      </div>
+      <div class="soustitre"> Comment puis-je vous accompagner dans votre parcours de dépistage du cancer aujourd’hui ?</div>
+
+      <div class="questionfrequentes">
+          <div class="questions" (click)="fillInput('Qu\'est ce que le cancer exactement ?')">
+          <span>Qu'est ce que le cancer exactement ?</span><img src="arrow.svg" alt="Logo" class="image">
+          </div>
+          <div class="questions"(click)="fillInput('Quelles sont les signes precoces du cancer ?')">
+              <span>Quelles sont les signes precoces du cancer ? </span><img src="arrow.svg" alt="Logo" class="image">
+          </div>
+          <div class="questions" (click)="fillInput('Peut on prevenir le cancer ?')">
+              <span>Peut on prevenir le cancer ? </span><img src="arrow.svg" alt="Logo" class="image">
+          </div>
+      </div>
+    </div>
+  }
+@else {
+  <div class="discussion">
+    @for (message of messages; track $index) {
+      @if (message.sender === 'user') {
+        <div class="demande">{{ message.content }}</div>
+      }
+      @else {
+        <div class="reponse">
+          <img class="bot_pp" src="Logo.svg" alt="Logo">
+          <span>{{ message.content }}</span>
+        </div>
+      }
+    }
+    @if (display_loader) {
+      <div class="reponse">
+        <img class="bot_pp" src="Logo.svg" alt="Logo">
+        <div class="bars_container" style="width: 100%">
+          @for (item of ['','','','','','','','','','','']; track $index) {
+            <ngx-skeleton-loader count="1" appearance="line"
+              [theme]="{ height: '8px', width: '100%' }">
+            </ngx-skeleton-loader>
+          }
+        </div>
+      </div>
+    }
+  </div>
+}
+
+
+
+
+
+ <!-- Input -->
+<form [formGroup]="formulaire" (ngSubmit)="onSubmit()">
+  <input type="text" formControlName="message" placeholder="Poser vos questions...">
+  <button id="sendbutton">
+    <img [ngClass]="{'send_image': true, 'disabled': formulaire.invalid || isTyping}" src="Send.svg" alt="">
+  </button>
+</form>
+
+</div>
