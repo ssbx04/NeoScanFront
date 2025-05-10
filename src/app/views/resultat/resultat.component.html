@@ -1,1 +1,26 @@
-<p>resultat works!</p>
+<div class="logo_container">
+  <img src="NamedLogo.svg" alt="">
+</div>
+<div class="scanner_main_container">
+  <h2 class="analyse">Résultat du test</h2>
+  @if (reponse === '0') {
+    <p class="analyse_text">Suspicion de <strong>gliome détectée</strong>. Il est recommandé de consulter un spécialiste rapidement. Ce résultat ne remplace pas un diagnostic médical.</p>
+  }
+  @else if (reponse === '1') {
+    <p class="analyse_text">Signes suggérant un <strong>méningiome observés</strong>. Veuillez consulter un spécialiste pour une évaluation précise. Ce résultat n'est pas un diagnostic médical.</p>
+  }
+  @else if (reponse === '2') {
+    <p class="analyse_text"><strong>Aucune tumeur</strong> détectée dans les images. Pour plus de certitude, une consultation médicale reste recommandée. Ce résultat n'est pas un diagnostic médical.</p>
+  }
+  @else {
+    <p class="analyse_text">Indications d’un <strong>adénome hypophysaire</strong> détectées. Consultez un spécialiste pour une évaluation plus approfondie. Ce résultat n'est pas un diagnostic </p>
+  }
+  <div class="file_selected">
+    <div class="image_container">
+      <img [src]="'data:' + fileType  + ';base64,' +  base64String " alt="">
+    </div>
+  </div>
+
+
+
+</div>
