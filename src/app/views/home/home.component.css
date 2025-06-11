@@ -32,6 +32,10 @@
   flex-direction: column;
   gap: 10px;
   text-decoration: none;
+  transition: all .3s ease;
+}
+.link_card:hover{
+  transform: translateY(-5px);
 }
 .card_title{
   font-weight: bold;
